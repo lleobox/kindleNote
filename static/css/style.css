@@ -1,0 +1,16 @@
+body{
+    font-family: '微软雅黑';
+}
+
+.table{
+    margin-top: 10px;
+}
+.table tbody tr td{
+    vertical-align: middle; 
+}
+.table tbody tr > td{
+    text-align: center;
+}
+.table tbody tr > td + td{
+    text-align: left;
+}

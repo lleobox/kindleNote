@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}
+查看标注
+{% endblock %}
+
+{% block nav %}
+    <li role="presentation" class="active"><a href="{{ url_for('showMark') }}">查看标注</a></li>
+    <li role="presentation"><a href="{{ url_for('showNote') }} ">查看笔记</a></li>
+    <li role="presentation"><a href="{{ url_for('showAbout') }} ">关于</a></li>
+{% endblock %}
+
+{% block main %}
+    <table class='table table-bordered table-hover'>
+        <col width="5%">
+        <col width="20%">
+        <col width="50%">
+        <col width="25%">
+        <thead>
+            <tr>
+                <td>序号</td>
+                <td>书名</td>
+                <td>内容</td>
+                <td>操作</td>
+            </tr>
+        </thead>
+        <tbody>
+        {% for item in items %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ item[1] }}</td>
+                <td>
+                    <div class="containt">
+                        {{ item[2] }}
+                    </div>
+                </td>
+                <td>
+                    <a class="btn btn-default" href="#" role="button">编辑</a>
+                    <a class="btn btn-danger" href="/do?delete={{ item[0] }}" role="button">删除</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>  
+{% endblock %}  
