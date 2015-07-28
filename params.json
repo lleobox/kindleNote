@@ -1,0 +1,1 @@
+{"name":"Kindlenote","tagline":"kindle笔记整理程序","body":"# kindleNote\r\nkindle笔记整理程序\r\n\r\n写的都差不多的程序了，却不小心删除了源码\r\n\r\n数据库了使用的Sqlite3，用flask却发现不知道怎么开多线程\r\n\r\n心塞啊心塞\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
