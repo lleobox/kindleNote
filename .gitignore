@@ -1,3 +1,5 @@
 /.idea
 /__pycache__
 __pycache__/modles.cpython-34.pyc
+app/__pycache__/__init__.cpython-34.pyc
+*.pyc
