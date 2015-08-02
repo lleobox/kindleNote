@@ -6,4 +6,5 @@ from .. import modles
 
 @main.route('/')
 def index():
-    return render_template('showMark.html')
+    mark = modles.Mark.query.all()
+    return render_template('showMark.html', mark=mark)

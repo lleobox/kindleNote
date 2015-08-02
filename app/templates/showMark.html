@@ -12,8 +12,36 @@
 {% block table %}
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <table>
-
+        <table class='table table-bordered table-hover'>
+            <col width="5%">
+            <col width="20%">
+            <col width="50%">
+            <col width="25%">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>书名</td>
+                    <td>内容</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in mark %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <div class="containt">
+                            {{ item.content }}
+                        </div>
+                    </td>
+                    <td>
+                        <a class="btn btn-default" href="#" role="button">编辑</a>
+                        <a class="btn btn-danger" href="/do?delete={{ item[0] }}" role="button">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
         </table>
     </div>
 </div>

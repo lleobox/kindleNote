@@ -15,5 +15,5 @@ class Mark(db.Model):
         self.date = date
         self.content = content
 
-    def __repr__(self):
-        return '<Mark %r>' % self.name
+    # def __repr__(self):
+    #     return '<Mark %r>' % self.date
