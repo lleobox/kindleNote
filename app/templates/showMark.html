@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block title %}显示标注文件{% endblock %}
+
+{% block nav %}
+    <ul class="nav nav-tabs">
+      <li role="presentation" class="active"><a href="#">查看标注</a></li>
+      <li role="presentation"><a href="#">查看笔记</a></li>
+      <li role="presentation"><a href="#">关于</a></li>
+    </ul>
+{% endblock %}
+
+{% block table %}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <table class='table table-bordered table-hover'>
+            <col width="5%">
+            <col width="20%">
+            <col width="50%">
+            <col width="25%">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>书名</td>
+                    <td>内容</td>
+                    <td>操作</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in mark %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <div class="containt">
+                            {{ item.content }}
+                        </div>
+                    </td>
+                    <td>
+                        <a class="btn btn-default" href="#" role="button">编辑</a>
+                        <a class="btn btn-danger" href="/delete={{ item.id }}" role="button">删除</a>
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

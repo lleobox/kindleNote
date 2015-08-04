@@ -1,0 +1,26 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+{% endblock %}
+
+{% block body %}
+    <div class="container">
+        <div class="row main-title">
+            <div class="col-md-10 col-md-offset-1">
+                <h2>Kindle标注处理程序</h2>
+            </div>
+        </div>
+        <div class="row nav">
+            <div class="col-md-10 col-md-offset-1">
+                {% block nav %}
+                {% endblock %}
+            </div>
+        </div>
+        {% block table %}
+        {% endblock %}
+    </div>
+    <script src="{{url_for('static', filename='js/js.js')}}"></script>
+{% endblock %}
+

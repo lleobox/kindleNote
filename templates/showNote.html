@@ -1,9 +1,0 @@
-{% extends 'base.html' %}
-{% block title %}
-查看笔记
-{% endblock %}
-{% block nav %}
-    <li role="presentation"><a href="{{ url_for('showMark') }}">查看标注</a></li>
-    <li role="presentation" class="active"><a href="{{ url_for('showNote') }}">查看笔记</a></li>
-    <li role="presentation"><a href="{{ url_for('showAbout') }}">关于</a></li>
-{% endblock %}
