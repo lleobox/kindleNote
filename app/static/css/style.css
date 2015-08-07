@@ -1,3 +1,7 @@
 .main-title{
     margin-top: 20px;
 }
+
+#table tbody td{
+    vertical-align: middle;
+}

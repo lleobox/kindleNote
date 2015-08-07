@@ -3,6 +3,7 @@
 {% block styles %}
     {{ super() }}
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-dialog.css') }}">
 {% endblock %}
 
 {% block body %}
@@ -21,6 +22,10 @@
         {% block table %}
         {% endblock %}
     </div>
-    <script src="{{url_for('static', filename='js/js.js')}}"></script>
+    {% block scripts %}
+        {{ super() }}
+        <script src="{{ url_for('static', filename='js/dialog-min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/js.js') }}"></script>
+    {% endblock %}
 {% endblock %}
 

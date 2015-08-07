@@ -12,7 +12,7 @@
 {% block table %}
 <div class="row">
     <div class="col-md-10 col-md-offset-1">
-        <table class='table table-bordered table-hover'>
+        <table class='table table-bordered table-hover' id="table">
             <col width="5%">
             <col width="20%">
             <col width="50%">
@@ -37,7 +37,7 @@
                     </td>
                     <td>
                         <a class="btn btn-default" href="#" role="button">编辑</a>
-                        <a class="btn btn-danger" href="/delete={{ item.id }}" role="button">删除</a>
+                        <a class="btn btn-danger delete-btn" href="javascript:void(0);" uid="{{ item.id }}" role="button">删除</a>
                     </td>
                 </tr>
             {% endfor %}
