@@ -27,7 +27,7 @@
             </thead>
             <tbody>
             {% for item in mark %}
-                <tr>
+                <tr id="uid-{{ item.id }}">
                     <td>{{ loop.index }}</td>
                     <td>{{ item.name }}</td>
                     <td>
@@ -36,7 +36,7 @@
                         </div>
                     </td>
                     <td>
-                        <a class="btn btn-default" href="#" role="button">编辑</a>
+                        <a class="btn btn-default edit-btn" href="javascript:void(0);" uid="{{ item.id }}" role="button">编辑</a>
                         <a class="btn btn-danger delete-btn" href="javascript:void(0);" uid="{{ item.id }}" role="button">删除</a>
                     </td>
                 </tr>
@@ -45,4 +45,30 @@
         </table>
     </div>
 </div>
+{% endblock %}
+
+{% block body %}
+    <div id="edit-wrap">
+        <div class="edit">
+            <form action="addNote" method="post">
+                <div class="form-group">
+                    <label for="name">书名</label>
+                    <input type="text" class="form-control" id="name" name="name">
+                </div>
+                <div class="form-group">
+                    <label for="mark">标注内容</label>
+                    <textarea name="mark" id="mark" rows="7" class="form-control"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="note">笔记</label>
+                    <textarea name="note" id="note" rows="8" class="form-control"></textarea>
+                </div>
+                <div class="form-group form-btn">
+                    <input id="cancel" class="btn btn-default" type='reset' value="取消">
+                    <input id="submit" class="btn btn-default" type="submit" value="提交">
+                </div>
+            </form>
+        </div>
+    </div>
+    {{ super() }}
 {% endblock %}

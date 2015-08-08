@@ -1,5 +1,6 @@
-containtList = $('.containt');
-deleteBtnList = $('.delete-btn');
+var containtList = $('.containt');
+var deleteBtnList = $('.delete-btn');
+var editBtn = $('.edit-btn');
 
 containtList.click(function(){
     var text = $.trim(this.innerText);
@@ -43,4 +44,14 @@ deleteBtnList.click(function(){
     d.show();
 });
 
+editBtn.click(function(){
+    var uid = 'uid-'+this.getAttribute('uid');
+    var thisTr = $('#'+uid);
+    $('#name').val(thisTr.children()[1].innerText);
+    $('#mark').val(thisTr.children()[2].innerText);
+    $('#edit-wrap').fadeIn();
+});
 
+$('#cancel').click(function(){
+    $('#edit-wrap').fadeOut();
+});
