@@ -13,7 +13,7 @@ containtList.click(function(){
         cancelValue: '关闭',
         cancel: function(){
             this.close();
-        },
+        }
     });
     d.show();
 });
@@ -39,7 +39,7 @@ deleteBtnList.click(function(){
         cancelValue: '取消',
         cancel: function(){
             this.close();
-        },
+        }
     });
     d.show();
 });
@@ -54,4 +54,32 @@ editBtn.click(function(){
 
 $('#cancel').click(function(){
     $('#edit-wrap').fadeOut();
+});
+
+$('#submit').click(function() {
+    $.post('/addnote', {
+        name: $('#name').val(),
+        mark: $('#mark').val(),
+        note: $('#note').val()
+    },function(data){
+        if(data == 'ok'){
+            dialog({
+                title: '添加成功',
+                content: '笔记添加成功',
+                quickClose: true,
+                onclose: function(){
+                    window.location.href = '/';
+                }
+            }).show();
+        }else{
+            dialog({
+                title: '添加失败',
+                content: '笔记添加失败',
+                quickClose: true,
+                onclose: function(){
+                    window.location.href = '/';
+                }
+            }).show();
+        }
+    })
 });

@@ -1,6 +1,6 @@
 from flask.ext.sqlalchemy import SQLAlchemy
 from . import db
-from time import time
+from datetime import datetime
 
 class Mark(db.Model):
     __tablename__ = 'Mark'
@@ -26,13 +26,15 @@ class Note(db.Model):
     name = db.Column(db.Text)
     mark = db.Column(db.Text)
     note = db.Column(db.Text)
-    date = db.Column(db.Date)
+    date = db.Column(db.DateTime)
 
-    def __init__(self, name, mark, note):
+    def __init__(self, name, mark, note, time=None):
         self.name = name
         self.mark = mark
         self.note = note
-        self.date = time()
+        if time == None:
+            time = datetime.utcnow()
+        self.date = time
 
     def __repr__(self):
         return '<Note %r>:' % self.id

@@ -1,4 +1,4 @@
-from flask import render_template, redirect, url_for
+from flask import render_template, redirect, url_for, request, make_response
 
 from . import main
 from .. import db
@@ -15,3 +15,14 @@ def delete(id):
     if mark is not None:
         db.session.delete(mark)
         return '目录删除成功'
+
+@main.route('/addnote', methods=['POST', 'GET'])
+def addNote():
+    if request.method == 'GET':
+        return redirect('404')
+    note = modles.Note(request.form['name'], request.form['mark'], request.form['note'])
+    try:
+        db.session.add(note)
+        return 'ok'
+    except:
+        return 'error'
