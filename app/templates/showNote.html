@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}显示标注文件{% endblock %}
+
+{% block nav %}
+    <ul class="nav nav-tabs">
+      <li role="presentation"><a href="{{ url_for('main.index') }}">查看标注</a></li>
+      <li role="presentation" class="active"><a href="{{ url_for('main.showNote') }}">查看笔记</a></li>
+      <li role="presentation"><a href="/about.html">关于</a></li>
+    </ul>
+{% endblock %}

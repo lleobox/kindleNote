@@ -9,6 +9,10 @@ def index():
     mark = modles.Mark.query.all()
     return render_template('showMark.html', mark=mark)
 
+@main.route('/showNote')
+def showNote():
+    return render_template('showNote.html')
+
 @main.route('/delete=<id>')
 def delete(id):
     mark = modles.Mark.query.filter_by(id=id).first()
@@ -26,3 +30,4 @@ def addNote():
         return 'ok'
     except:
         return 'error'
+

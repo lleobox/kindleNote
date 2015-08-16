@@ -1,9 +1,10 @@
 {% extends 'bootstrap/base.html' %}
 
 {% block styles %}
-    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/ui-dialog.css') }}">
+    <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
 {% endblock %}
 
 {% block body %}
@@ -23,7 +24,8 @@
         {% endblock %}
     </div>
     {% block scripts %}
-        {{ super() }}
+        <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/dialog-min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/js.js') }}"></script>
     {% endblock %}
