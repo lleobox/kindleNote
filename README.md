@@ -1,5 +1,6 @@
 # kindle标注处理程序
 >8.17添加使用方法
+
 ###初始化数据库
     1. 将kindle的标注文件导入之程序的根目录中
     2. 执行命令'python manage.py shell'
