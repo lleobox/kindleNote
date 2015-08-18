@@ -3,7 +3,7 @@ from init import init_db as init
 from app import create_app, db
 from app.modles import Mark, Note
 from flask.ext.script import Manager, Shell
-from flask.ext.migrate import Migrate, MigrateCommand
+from flask.ext.migrate import MigrateCommand
 
 app = create_app('default')
 manager = Manager(app)
