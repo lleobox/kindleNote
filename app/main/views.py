@@ -13,13 +13,6 @@ def index():
 def showNote():
     return render_template('showNote.html')
 
-@main.route('/delete=<id>')
-def delete(id):
-    mark = modles.Mark.query.filter_by(id=id).first()
-    if mark is not None:
-        db.session.delete(mark)
-        return '目录删除成功'
-
 @main.route('/addnote', methods=['POST', 'GET'])
 def addNote():
     if request.method == 'GET':
@@ -30,4 +23,15 @@ def addNote():
         return 'ok'
     except:
         return 'error'
+
+@main.route('/about')
+def about():
+    return render_template('about.html')
+
+@main.route('/delete=<id>')
+def delete(id):
+    mark = modles.Mark.query.filter_by(id=id).first()
+    if mark is not None:
+        db.session.delete(mark)
+        return '目录删除成功'
 
