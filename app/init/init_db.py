@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 import re
+import os
 from app import db
 from app.modles import Mark
-
+from config import basedir
 
 def doitem(item):
     prog = re.compile(r"#(.*?)的标注 \| 添加于 (.*?)年(.*?)月(.*?)日")
@@ -49,18 +50,18 @@ def create_contents(fname):
 
 
 def init_db():
-    print("正在创建数据库....")
     db.drop_all()
     db.create_all()
-    content_list = create_contents("My Clippings.txt")
+    content_list = create_contents(os.path.join(basedir, "My Clippings.txt"))
     for line in content_list:
         mark = Mark(line[0], line[1], line[2], line[3])
         db.session.add(mark)
     db.session.commit()
-    print("数据库创建完成^_^\n")
+
+    return True
 
 
 if __name__ == "__main__":
-    content_list = create_contents("My Clippings.txt")
+    content_list = create_contents(os.path.join(basedir, "My Clippings.txt"))
     for line in content_list:
         print(line)
