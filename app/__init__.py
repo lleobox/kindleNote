@@ -19,6 +19,8 @@ def create_app(config_name):
     migrate.init_app(app, db)
 
     from .main import main as main_blueinit
+    from .init import init as init_blueinit
     app.register_blueprint(main_blueinit)
+    app.register_blueprint(init_blueinit)
 
     return app
