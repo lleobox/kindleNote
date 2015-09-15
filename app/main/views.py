@@ -4,7 +4,7 @@ from . import main
 from .. import db
 from .. import modles
 
-@main.route('/')
+@main.route('/showMark')
 def index():
     mark = modles.Mark.query.all()
     return render_template('showMark.html', mark=mark)

@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import re
 import os
+import time
 from app import db
 from app.modles import Mark
 from config import basedir
@@ -58,6 +59,7 @@ def init_db():
         db.session.add(mark)
     db.session.commit()
 
+    print("数据库创建完成")
     return True
 
 
