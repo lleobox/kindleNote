@@ -4,14 +4,17 @@ from . import main
 from .. import db
 from .. import modles
 
-@main.route('/')
+
+
+@main.route('/showMark')
 def index():
-    mark = modles.Mark.query.all()
+    mark = modles.Mark.query.order_by(modles.Mark.id.desc())
     return render_template('showMark.html', mark=mark)
 
 @main.route('/showNote')
 def showNote():
-    return render_template('showNote.html')
+    note = modles.Note.query.all()
+    return render_template('showNote.html', note=note)
 
 @main.route('/addnote', methods=['POST', 'GET'])
 def addNote():

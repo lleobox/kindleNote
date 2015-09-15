@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+
+
+{% block body %}
+    应用正在初始化....
+    <button id="btn">click</button>
+    {% block scripts %}
+        <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
+        <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/dialog-min.js') }}"></script>
+        <script src="{{ url_for('static', filename='js/js.js') }}"></script>
+    {% endblock %}
+    <script>
+        $("#btn").click(function(){
+            $.post('/', function(data){
+                console.log(data);
+            })
+        });
+    </script>
+{% endblock %}
