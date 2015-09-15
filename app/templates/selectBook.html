@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block title %}选择需要管理的图书{% endblock %}
+
+
+{% block select %}
+    {% for foo in bookList %}
+        <h3><a href="/showMark/{{ foo.name }}" style
+                ="text-decoration: none"><span class="label label-info">{{ foo.name }}</span></a></h3>
+    {% endfor %}
+{% endblock %}

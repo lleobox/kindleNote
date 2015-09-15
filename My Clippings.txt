@@ -1,15 +1,100 @@
-﻿Aesop’s Fables(伊索寓言) (13114421482@163.com)
-- 您在位置 #2-3的标注 | 添加于 2015年8月17日星期一 下午2:02:30
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12692-12693的标注 | 添加于 2015年8月28日星期五 下午10:40:56
 
-A cock was once strutting up and down the farmyard among the hens when suddenly he espied something shinning amid the straw. "Ho! ho!" quoth he, "that's for me," and soon rooted it
+通过JavaScript指定事件处理程序的传统方式，就是将一个函数赋值给一个事件处理程序属性。
 ==========
-﻿Aesop’s Fables(伊索寓言) (13114421482@163.com)
-- 您在位置 #38-40的标注 | 添加于 2015年8月17日星期一 下午2:02:38
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12695-12698的标注 | 添加于 2015年8月28日星期五 下午10:41:17
 
-show you how to live. When you have been in town a week you will wonder how you could ever have stood a country life." No sooner said than done: the two mice set off for the town and arrived at the Town Mouse's residence late at night. "You will want some refreshment after our long journey," said the polite Town Mouse, and took his
+每个元素（包括window和document）都有自己的事件处理程序属性，这些属性通常全部小写，例如onclick。
 ==========
-﻿Aesop’s Fables(伊索寓言) (13114421482@163.com)
-- 您在位置 #68-70的标注 | 添加于 2015年8月17日星期一 下午2:02:45
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12704-12705的标注 | 添加于 2015年8月28日星期五 下午10:41:49
 
-other birds were hopping about picking up their food. "Beware of that man," quoth the Swallow. "Why, what is he doing?" said the others. "That is hemp seed he is sowing; be careful to pick up every one of the seeds, or else you will repent it." The birds paid no heed to the Swallow's words, and
+使用DOM0级方法指定的事件处理程序被认为是元素的方法。因此，这时候的事件处理程序是在元素的作用域中运行；换句话说，程序中的this引用当前元素。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12720-12726的标注 | 添加于 2015年8月28日星期五 下午10:42:41
+
+“DOM2级事件”定义了两个方法，用于处理指定和删除事件处理程序的操作：addEventListener()和removeEventListener()。所有DOM节点中都包含这两个方法，并且它们都接受3个参数：要处理的事件名、作为事件处理程序的函数和一个布尔值。最后这个布尔值参数如果是true，表示在捕获阶段调用事件处理程序；如果是false，表示在冒泡阶段调用事件处理程序。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12731-12733的标注 | 添加于 2015年8月28日星期五 下午10:45:00
+
+与DOM0级方法一样，这里添加的事件处理程序也是在其依附的元素的作用域中运行。使用DOM2级方法添加事件处理程序的主要好处是可以添加多个事件处理程序。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12739-12742的标注 | 添加于 2015年8月28日星期五 下午10:45:29
+
+通过addEventListener()添加的事件处理程序只能使用removeEventListener()来移除；移除时传入的参数与添加处理程序时使用的参数相同。这也意味着通过addEventListener()添加的匿名函数将无法移除，
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12954-12955的标注 | 添加于 2015年8月29日星期六 上午6:30:29
+
+要阻止特定事件的默认行为，可以使用preventDefault()方法。例如，链接的默认行为就是在被单击时会导航到其
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12954-12956的标注 | 添加于 2015年8月29日星期六 上午6:30:38
+
+要阻止特定事件的默认行为，可以使用preventDefault()方法。例如，链接的默认行为就是在被单击时会导航到其href特性指定的URL。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12954-12955的标注 | 添加于 2015年8月29日星期六 上午6:30:48
+
+要阻止特定事件的默认行为，可以使用preventDefault()方法。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12960-12963的标注 | 添加于 2015年8月29日星期六 上午6:30:56
+
+只有cancelable属性设置为true的事件，才可以使用preventDefault()来取消其默认行为。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #12964-12965的标注 | 添加于 2015年8月29日星期六 上午6:31:02
+
+stopPropagation()方法用于立即停止事件在DOM层次中的传播，即取消进一步的事件捕获或冒泡。
+==========
+﻿JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #13494-13498的标注 | 添加于 2015年8月29日星期六 下午10:49:30
+
+IE8及更早版本不支持事件对象上的页面坐标，不过使用客户区坐标和滚动信息可以计算出来。这时候需要用到document.body（混杂模式）或document.documentElement（标准模式）中的scrollLeft和scrollTop属性。
+==========
+JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #8986-8990的标注 | 添加于 2015年8月31日星期一 下午1:13:36
+
+第一个就是documentElement属性，该属性始终指向HTML页面中的<html>元素。另一个就是通过childNodes列表访问文档元素，但通过documentElement属性则能更快捷、更直接地访问该元素。
+==========
+JavaScript高级程序设计(第3版) (图灵程序设计丛书) (泽卡斯（Zakas. Nicholas C.）)
+- 您在位置 #9010-9014的标注 | 添加于 2015年8月31日星期一 下午1:14:25
+
+Document另一个可能的子节点是DocumentType。通常将<!DOCTYPE>标签看成一个与文档其他部分不同的实体，可以通过doctype属性（在浏览器中是document.doctype）来访问它的信息。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #7117 的书签 | 添加于 2015年9月14日星期一 下午2:47:19
+
+
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #7310-7313的标注 | 添加于 2015年9月14日星期一 下午3:00:24
+
+在Web浏览器中，“书签”就是一个保存起来的URL。如果书签是javascript：URL，那么保存的就是一小段脚本，叫做bookmarklet。bookmarklet是一个小型程序，很容易就可以从浏览器的菜单或工具栏里启动。bookmarklet里的代码执行起来就像页面上的脚本一样，可以查询和设置文档的内容、呈现和行为。只要书签不返回值，它就可以操作当前显示的任何文档，而不把文档替换成新的内容。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #7378-7386的标注 | 添加于 2015年9月14日星期一 下午3:06:20
+
+脚本的执行只在默认情况下是同步和阻塞的。<script>标签可以有defer和async属性，这（在支持它们的浏览器里）可以改变脚本的执行方式。这些都是布尔属性，没有值；只需要出现在<script>标签里即可。HTML5说这些属性只在和src属性联合使用时才有效，但有些浏览器还支持延迟的内联脚本： <script defer src="deferred.js"></script> <script async src="async.js"></script> defer和async属性都像在告诉浏览器链接进来的脚本不会使用document.write（），也不会生成文档内容，因此浏览器可以在下载脚本时继续解析和渲染文档。defer属性使得浏览器延迟脚本的执行，直到文档的载入和解析完成，并可以操作。async属性使得浏览器可以尽快地执行脚本，而不用在下载脚本时阻塞文档解析。如果<script>标签同时有两个属性，同时支持两者的浏览器会遵从async属性并忽略defer属性。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #7462 的书签 | 添加于 2015年9月14日星期一 下午3:23:00
+
+
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #7851 的书签 | 添加于 2015年9月15日星期二 上午10:26:14
+
+
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #7889 的书签 | 添加于 2015年9月15日星期二 上午10:28:38
+
+
 ==========

@@ -3,14 +3,14 @@
 
 {% block nav %}
     <ul class="nav nav-tabs">
-      <li role="presentation"><a href="{{ url_for('main.index') }}">查看标注</a></li>
+      <li role="presentation"><a href="{{ url_for('main.showMark') }}">查看标注</a></li>
       <li role="presentation" class="active"><a href="{{ url_for('main.showNote') }}">查看笔记</a></li>
       <li role="presentation"><a href="{{ url_for('main.about') }}">关于</a></li>
     </ul>
 {% endblock %}
 
 {% block table %}
-<div class="row">
+<div class="row table">
     <div class="col-md-10 col-md-offset-1">
         <table class='table table-bordered table-hover' id="table">
             <col width="5%">

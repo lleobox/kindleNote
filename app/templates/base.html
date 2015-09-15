@@ -20,8 +20,12 @@
                 {% endblock %}
             </div>
         </div>
-        {% block table %}
-        {% endblock %}
+        {% block table %}{% endblock %}
+        <div class="row select">
+            <div class="col-md-10 col-md-offset-1">
+                {% block select %}{% endblock %}
+            </div>
+        </div>
     </div>
     {% block scripts %}
         <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>

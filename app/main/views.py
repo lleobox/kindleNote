@@ -5,10 +5,21 @@ from .. import db
 from .. import modles
 
 
+@main.route('/selectBook')
+def selectBook():
+    bookName = ''
+    bookList = db.session.query(modles.Mark.name).distinct()
+    return render_template('selectBook.html', bookList=bookList)
+    # return redirect(url_for('main.showMark', bookName=bookName))
 
 @main.route('/showMark')
-def index():
+def showMark():
     mark = modles.Mark.query.order_by(modles.Mark.id.desc())
+    return render_template('showMark.html', mark=mark)
+
+@main.route('/showMark/<bookName>')
+def showMark_(bookName):
+    mark = modles.Mark.query.filter_by(name=bookName)
     return render_template('showMark.html', mark=mark)
 
 @main.route('/showNote')

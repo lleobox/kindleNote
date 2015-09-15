@@ -11,4 +11,4 @@ def first_init():
 
 @init.route('/')
 def loding():
-    return redirect(url_for('main.index'))
+    return redirect(url_for('main.selectBook'))

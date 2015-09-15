@@ -18,7 +18,7 @@ class Mark(db.Model):
         self.content = content
 
     def __repr__(self):
-        return '<Mark %r>' % self.id
+        return '<Mark %s>' % self.name
 
 class Note(db.Model):
     __tablename__ = 'Note'
