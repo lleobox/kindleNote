@@ -8,3 +8,40 @@
       <li role="presentation"><a href="{{ url_for('main.about') }}">关于</a></li>
     </ul>
 {% endblock %}
+
+{% block table %}
+<div class="row">
+    <div class="col-md-10 col-md-offset-1">
+        <table class='table table-bordered table-hover' id="table">
+            <col width="5%">
+            <col width="20%">
+            <col width="50%">
+            <col width="25%">
+            <thead>
+                <tr>
+                    <td>序号</td>
+                    <td>书名</td>
+                    <td>内容</td>
+                    <td>笔记</td>
+                </tr>
+            </thead>
+            <tbody>
+            {% for item in note %}
+                <tr id="uid-{{ item.id }}">
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.name }}</td>
+                    <td>
+                        <div class="containt">
+                            {{ item.mark }}
+                        </div>
+                    </td>
+                    <td>
+                        {{ item.note }}
+                    </td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

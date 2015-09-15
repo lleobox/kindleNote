@@ -51,8 +51,8 @@ def create_contents(fname):
 
 
 def init_db():
-    db.drop_all()
-    db.create_all()
+    db.drop_all(bind=['Mark'])
+    db.create_all(bind=['Mark'])
     content_list = create_contents(os.path.join(basedir, "My Clippings.txt"))
     for line in content_list:
         mark = Mark(line[0], line[1], line[2], line[3])

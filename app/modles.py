@@ -3,6 +3,7 @@ from . import db
 from datetime import datetime
 
 class Mark(db.Model):
+    __bind_key__ = 'Mark'
     __tablename__ = 'Mark'
     id = db.Column(db.Integer, primary_key=True, autoincrement=True)
     name = db.Column(db.Text)

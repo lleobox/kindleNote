@@ -14,16 +14,24 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'dev-db.sqlite')
+    SQLALCHEMY_BINDS = {
+        'Mark': 'sqlite:///' + os.path.join(basedir, 'dev-mark.sqlite')
+    }
 
 
 class ProductionConfig(Config):
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
+    SQLALCHEMY_BINDS = {
+        'Mark': 'sqlite:///' + os.path.join(basedir, 'mark.sqlite')
+    }
 
 
 class TestingConfig(Config):
     DEBUG = True
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'db-back.sqlite')
-
+    SQLALCHEMY_BINDS = {
+        'Mark': 'sqlite:///' + os.path.join(basedir, 'test-mark.sqlite')
+    }
 
 config = {
     'development': DevelopmentConfig,
