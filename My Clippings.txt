@@ -98,3 +98,28 @@ JavaScript权威指南（原书第6版） ((美)David Flanagan)
 
 
 ==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #9543-9545的标注 | 添加于 2015年9月16日星期三 下午3:35:16
+
+width和height只指定了元素内容区域的尺寸，它不包含元素的内边距或边框（或外边距）所需的任何额外空间。为了确定有边框元素在屏幕上的全尺寸，必须把元素的宽度加上左右两边的内边距和左右两个边框宽度，把元素的高度加上上下两边的内边距和上下两个边框宽度。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #9546-9548的标注 | 添加于 2015年9月16日星期三 下午3:35:23
+
+left和top属性指定了从容器边框内侧到定位元素边框外侧的距离。这些属性不是从容器内容区域的左上角开始度量的，而是从容器内边距的左上角开始的。同样，right和bottom属性是从容器内边距的右下角开始度量的。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #9575-9576的标注 | 添加于 2015年9月16日星期三 下午3:51:16
+
+visibility和display属性对绝对和固定定位的元素的影响是等价的，因为这些元素都不是文档布局的一部分。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #9571-9574的标注 | 添加于 2015年9月16日星期三 下午3:51:42
+
+visibility和display属性之间的差别可以从它们对使用静态或相当定位的元素的影响中看到。对于一个常规布局流中的元素，设置visibility属性为hidden使得元素不可见，但是在文档布局中仍保留了它的空间。类似的元素可以重复隐藏和显示而不改变文档布局。但是，如果元素的display属性设置为none，在文档布局中不再给它分配空间，它各边的元素会合拢，就当它从来不存在。
+==========
+JavaScript权威指南（原书第6版） ((美)David Flanagan)
+- 您在位置 #9635-9664的标注 | 添加于 2015年9月16日星期三 下午3:57:16
+
+<!DOCTYPE html> <head> <style type="text/css"> /** * This is a CSS stylesheet that defines three style rules that we use * in the body of the document to create a "window" visual effect. * The rules use positioning properties to set the overall size of the window * and the position of its components. Changing the size of the window * requires careful changes to positioning properties in all three rules. **/ div.window { /* 指定窗口的尺寸和边框 */ position: absolute; /* position在其他地方指定 */ width: 300px; height: 200px; /* 窗口尺寸，不含边框 */ border: 3px outset gray; /* 注意 3D "outset" 边框效果 */ } div.titlebar { /* 指定标题栏的定位、尺寸和样式 */ position: absolute; /* 它是定位元素 */ top: 0px; height: 18px; /* 标题栏18px + 内边距和边框 */ width: 290px; /* 290 + 5px 左、右内边距 = 300 */ background-color: #aaa; /* 标题栏颜色 */ border-bottom: groove gray 2px; /* 标题栏只有底部边框 */ padding: 3px 5px 2px 5px; /* 顺时针值: top、right、bottom、left */ font: bold 11pt sans-serif; /* 标题栏字体 */ } div.content { /* 指定窗口内容的尺寸、定位和滚动 */ position: absolute; /* 它是定位元素 */ top: 25px; /* 18px标题+2px边框+3px+2px内边距 */ height: 165px; /* 200px总共－25px标题栏－10px内边距 */ width: 290px; /* 300px宽度－10px内边距 */ padding: 5px; /* 4条边上都有空间 */ overflow: auto; /* 如果需要显示滚动条 */ background-color: #fff; /* 默认白色背景 */ } div.translucent { /* 此类让窗口部分透明 */ opacity: .75; /* 透明度标准样式 */ filter: alpha(opacity=75); /* IE的透明度 */ } </style> </head> <body> <!-- 定义一个窗口："window" div有一个标题栏和 --> <!-- 其内是一个内容div。注意，如何设置定位 --> <!-- 一个扩充了样式表的style属性 --> <div class="window"> <div class="titlebar">Test Window</div> <div class="content"> 1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0<br><!-- 若干行 --> 1<br>2<br>3<br>4<br>5<br>6<br>7<br>8<br>9<br>0<br><!-展示滚动--> </div> </div> <!-- 定义另一个窗口：用不同的定位、颜色和字体重量 --> <div class="window"> <div class="titlebar">Another Window</div> <div class="content translucent" > This is another window. Its <tt>z-index</tt> puts it on top of the other one. CSS styles make its content area translucent, in browsers that support that. </div> </div>
+==========

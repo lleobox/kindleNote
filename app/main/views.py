@@ -5,27 +5,29 @@ from .. import db
 from .. import modles
 
 
-@main.route('/selectBook')
-def selectBook():
-    bookName = ''
-    bookList = db.session.query(modles.Mark.name).distinct()
-    return render_template('selectBook.html', bookList=bookList)
-    # return redirect(url_for('main.showMark', bookName=bookName))
+@main.route('/selectbook')
+def selectbook():
+    booklist = db.session.query(modles.Mark.name).distinct()
+    return render_template("selectBook.html", bookList=booklist)
 
-@main.route('/showMark')
-def showMark():
+
+@main.route('/showmark')
+def showmark():
     mark = modles.Mark.query.order_by(modles.Mark.id.desc())
     return render_template('showMark.html', mark=mark)
 
-@main.route('/showMark/<bookName>')
-def showMark_(bookName):
+
+@main.route('/showmark/<bookName>')
+def showmark_(bookName):
     mark = modles.Mark.query.filter_by(name=bookName)
     return render_template('showMark.html', mark=mark)
 
-@main.route('/showNote')
-def showNote():
+
+@main.route('/shownote')
+def shownote():
     note = modles.Note.query.all()
     return render_template('showNote.html', note=note)
+
 
 @main.route('/addnote', methods=['POST', 'GET'])
 def addNote():
@@ -38,9 +40,11 @@ def addNote():
     except:
         return 'error'
 
+
 @main.route('/about')
 def about():
     return render_template('about.html')
+
 
 @main.route('/delete=<id>')
 def delete(id):
@@ -48,4 +52,3 @@ def delete(id):
     if mark is not None:
         db.session.delete(mark)
         return '目录删除成功'
-
