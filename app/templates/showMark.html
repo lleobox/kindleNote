@@ -2,11 +2,16 @@
 {% block title %}显示标注文件{% endblock %}
 
 {% block nav %}
-    <ul class="nav nav-tabs">
-      <li role="presentation" class="active"><a href="{{ url_for('main.showMark') }}">查看标注</a></li>
-      <li role="presentation"><a href="{{ url_for('main.showNote') }}">查看笔记</a></li>
-      <li role="presentation"><a href="{{ url_for('main.about') }}">关于</a></li>
-    </ul>
+<div class="row nav">
+    <div class="col-md-10 col-md-offset-1">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="{{ url_for('main.selectBook') }}">选择图书</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('main.showMark') }}">查看标注</a></li>
+            <li role="presentation"><a href="{{ url_for('main.showNote') }}">查看笔记</a></li>
+            <li role="presentation"><a href="{{ url_for('main.about') }}">关于</a></li>
+        </ul>
+    </div>
+</div>
 {% endblock %}
 
 {% block table %}

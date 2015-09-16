@@ -8,30 +8,35 @@
 {% endblock %}
 
 {% block body %}
+    {# 主体内容开始 #}
     <div class="container">
+    {# 标题区开始 #}
         <div class="row main-title">
             <div class="col-md-10 col-md-offset-1">
                 <h2>Kindle标注处理程序</h2>
             </div>
         </div>
-        <div class="row nav">
-            <div class="col-md-10 col-md-offset-1">
-                {% block nav %}
-                {% endblock %}
-            </div>
-        </div>
-        {% block table %}{% endblock %}
-        <div class="row select">
-            <div class="col-md-10 col-md-offset-1">
-                {% block select %}{% endblock %}
-            </div>
-        </div>
+    {# 标题区结束 #}
+
+{% block nav %}{% endblock %}
+
+{% if mark %}
+    {% block table %}{% endblock %}
+{% endif %}
+
+{% if bookList %}
+    {% block select %}{% endblock %}
+{% endif %}
+
+    {# 主体区结束 #}
     </div>
+
     {% block scripts %}
         <script src="{{ url_for('static',filename='js/jquery-2.1.4.min.js') }}"></script>
         <script src="{{ url_for('static',filename='js/bootstrap.min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/dialog-min.js') }}"></script>
         <script src="{{ url_for('static', filename='js/js.js') }}"></script>
     {% endblock %}
+
 {% endblock %}
 
