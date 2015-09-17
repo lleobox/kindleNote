@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}显示笔记文件{% endblock %}
+
+{% block nav %}
+<div class="row nav">
+    <div class="col-md-10 col-md-offset-1">
+        <ul class="nav nav-tabs">
+            <li role="presentation"><a href="{{ url_for('main.selectbook') }}">选择图书</a></li>
+            <li role="presentation"><a href="{{ url_for('main.showmark') }}">查看标注</a></li>
+            <li role="presentation" class="active"><a href="{{ url_for('main.shownote') }}">查看笔记</a></li>
+            <li role="presentation"><a href="{{ url_for('main.about') }}">关于</a></li>
+        </ul>
+    </div>
+</div>
+{% endblock %}
+
