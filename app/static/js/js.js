@@ -47,7 +47,6 @@ deleteBtnList.click(function(){
 editBtn.click(function(){
     var uid = 'uid-'+this.getAttribute('uid');
     var thisTr = $('#'+uid);
-    console.log($('#name'));
     $('#name').val(thisTr.children()[1].innerText);
     $('#mark').val(thisTr.children()[2].innerText);
     $('#edit-wrap').fadeIn();
@@ -55,34 +54,6 @@ editBtn.click(function(){
 
 $('#cancel').click(function(){
     $('#edit-wrap').fadeOut();
-});
-
-$('#submit').click(function() {
-    $.post('/addnote', {
-        name: $('#name').val(),
-        mark: $('#mark').val(),
-        note: $('#note').val()
-    },function(data){
-        if(data == 'ok'){
-            dialog({
-                title: '添加成功',
-                content: '笔记添加成功',
-                quickClose: true,
-                onclose: function(){
-                    location.reload(true);
-                }
-            }).show();
-        }else{
-            dialog({
-                title: '添加失败',
-                content: '笔记添加失败',
-                quickClose: true,
-                onclose: function(){
-                    location.reload(true);
-                }
-            }).show();
-        }
-    })
 });
 
 $(".detail").click(function() {

@@ -1,5 +1,10 @@
 {% extends 'base.html' %}
 {% block title %}显示标注文件{% endblock %}
+{% block styles %}
+    {{ super() }}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/wangEditor-1.1.0-min.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='fonts/css/font-awesome.min.css') }}">
+{% endblock %}
 
 {% block nav %}
 <div class="row nav">
@@ -65,7 +70,9 @@
             </div>
             <div class="form-group">
                 <label for="note">笔记</label>
-                <textarea name="note" id="note" rows="8" class="form-control"></textarea>
+                <div id='txtDiv' style='border:1px solid #cccccc; border-radius: 5px;'>
+                    <p>请输入内容...</p>
+                </div>
             </div>
             <div class="form-group form-btn">
                 <input id="cancel" class="btn btn-default" type='reset' value="取消">
@@ -74,4 +81,44 @@
         </div>
     </div>
     {{ super() }}
+{% endblock %}
+
+{% block scripts %}
+    {{ super() }}
+    <script type="text/javascript" src="{{ url_for('static', filename='js/wangEditor-1.1.0-min.js') }}"></script>
+    <script>
+        $(function(){
+            $('#spanTime').text((new Date()).toString());
+            var $editor = $('#txtDiv').wangEditor();
+
+            $('#submit').click(function() {
+                console.log($editor.html());
+                $.post('/addnote', {
+                    name: $('#name').val(),
+                    mark: $('#mark').val(),
+                    note: $editor.html()
+                },function(data){
+                    if(data == 'ok'){
+                        dialog({
+                            title: '添加成功',
+                            content: '笔记添加成功',
+                            quickClose: true,
+                            onclose: function(){
+                                location.reload(true);
+                            }
+                        }).show();
+                    }else{
+                        dialog({
+                            title: '添加失败',
+                            content: '笔记添加失败',
+                            quickClose: true,
+                            onclose: function(){
+                                location.reload(true);
+                            }
+                        }).show();
+                    }
+                })
+            });
+        });
+    </script>
 {% endblock %}

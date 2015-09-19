@@ -22,7 +22,7 @@
             <h4>{{ foo.name }}</h4>
             <span class="tag">标签：<span class="label label-default">JavaScript</span></span>
             <span class="time">添加时间：<span class="label label-primary">{{ foo.date }}</span></span>
-            <article>{{ foo.note }}</article>
+            <article>{{ foo.note|safe }}</article>
         </section>
         <section class="note_mark">
             <hr>
