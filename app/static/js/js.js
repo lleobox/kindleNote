@@ -31,7 +31,7 @@ deleteBtnList.click(function(){
                     content: '删除成功',
                     quickClose: true,
                     onclose: function(){
-                        window.location.href = '/';
+                        location.reload(true);
                     }
                 }).show();
             })
@@ -47,6 +47,7 @@ deleteBtnList.click(function(){
 editBtn.click(function(){
     var uid = 'uid-'+this.getAttribute('uid');
     var thisTr = $('#'+uid);
+    console.log($('#name'));
     $('#name').val(thisTr.children()[1].innerText);
     $('#mark').val(thisTr.children()[2].innerText);
     $('#edit-wrap').fadeIn();
@@ -68,7 +69,7 @@ $('#submit').click(function() {
                 content: '笔记添加成功',
                 quickClose: true,
                 onclose: function(){
-                    window.location.href = '/';
+                    location.reload(true);
                 }
             }).show();
         }else{
@@ -77,9 +78,22 @@ $('#submit').click(function() {
                 content: '笔记添加失败',
                 quickClose: true,
                 onclose: function(){
-                    window.location.href = '/';
+                    location.reload(true);
                 }
             }).show();
         }
     })
 });
+
+$(".detail").click(function() {
+    var mark = this.parentNode.getElementsByClassName("note_mark");
+    var i =this.getElementsByTagName("i");
+    $(mark).toggle(500);
+    if($(i).hasClass("glyphicon-menu-down")){
+        $(i).removeClass("glyphicon-menu-down");
+        $(i).addClass("glyphicon-menu-up")
+    } else {
+        $(i).removeClass("glyphicon-menu-up");
+        $(i).addClass("glyphicon-menu-down")
+    }
+})

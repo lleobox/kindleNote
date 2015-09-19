@@ -20,12 +20,16 @@
 
 {% block nav %}{% endblock %}
 
+{% if bookList %}
+    {% block select %}{% endblock %}
+{% endif %}
+
 {% if mark %}
     {% block table %}{% endblock %}
 {% endif %}
 
-{% if bookList %}
-    {% block select %}{% endblock %}
+{% if note %}
+    {% block note_cotainer %}{% endblock %}
 {% endif %}
 
     {# 主体区结束 #}

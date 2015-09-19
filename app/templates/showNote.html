@@ -14,3 +14,25 @@
 </div>
 {% endblock %}
 
+{% block note_cotainer %}
+<div class="row note">
+    {% for foo in note %}
+        <div class="col-md-10 col-md-offset-1">
+        <section>
+            <h4>{{ foo.name }}</h4>
+            <span class="tag">标签：<span class="label label-default">JavaScript</span></span>
+            <span class="time">添加时间：<span class="label label-primary">{{ foo.date }}</span></span>
+            <article>{{ foo.note }}</article>
+        </section>
+        <section class="note_mark">
+            <hr>
+            <article>{{ foo.mark }}</article>
+        </section>
+        <span class="detail">显示标注<i class="glyphicon glyphicon-menu-down"></i></span>
+    </div>
+    {% endfor %}
+
+</div>
+
+{% endblock %}
+
