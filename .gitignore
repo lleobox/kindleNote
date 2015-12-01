@@ -5,4 +5,8 @@ __pycache__/modles.cpython-34.pyc
 app/__pycache__/__init__.cpython-34.pyc
 =======
 >>>>>>> dev
-*.pyc
+*.pyc*
+*.sqlite
+
+My Clippings.txt
+*.sqlite
