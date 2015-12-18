@@ -10,3 +10,6 @@ app/__pycache__/__init__.cpython-34.pyc
 
 My Clippings.txt
 *.sqlite
+dev-db.sqlite
+My Clippings.txt
+dev-mark.sqlite
