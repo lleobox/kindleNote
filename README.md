@@ -1,5 +1,7 @@
 # kindle标注处理程序
 
+本程序还不完善，推荐使用[http://clippings.io/](http://clippings.io/)
+
 > 平时使用kindle时经常会标注许多内容，这些内容有许多有用的笔记，但是导入到电脑上很不方便，于是便开发了这个程序，可以方便的将kindle的标注内容导出，同时还可以针对标注内容添加批注或笔记，方便对知识进行整理
 
 整理kindle标注内容，基于`python3`、`flask`开发
@@ -36,5 +38,5 @@
 心塞啊心塞
 
 
-  [1]: mailto:lleohao@qq.com
-  [2]: http://weibo.com/lleohao
+[1]: mailto:lleohao@qq.com
+[2]: http://weibo.com/lleohao

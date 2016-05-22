@@ -3,3 +3,4 @@
 *.pyc
 My Clippings.txt
 /migrations
+/venv
